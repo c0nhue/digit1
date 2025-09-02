@@ -1,3 +1,5 @@
 numpy
 matplotlib
 tensorflow
+jupyter
+scikit-learn
