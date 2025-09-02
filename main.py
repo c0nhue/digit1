@@ -30,7 +30,7 @@ def main():
     plot_sample_predictions(model, X_test, y_test)
 
     # Save model
-    model.save("outputs/mnist_cnn.h5")
+    model.save("outputs/mnist_cnn.keras")
 
 if __name__ == "__main__":
     main()
