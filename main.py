@@ -1,6 +1,6 @@
 import os
 from src.data_preprocessing import load_data, preprocess_data_CNN
-from src.model import build_model
+from src.model import build_model_A, build_model_B, build_model_C
 from src.train import plot_training_history, plot_sample_predictions
 
 def main():
@@ -11,7 +11,7 @@ def main():
     (X_train, y_train), (X_val, y_val), (X_test, y_test) = preprocess_data_CNN(X_train, y_train, X_val, y_val, X_test, y_test)
 
     # Build model
-    model = build_model()
+    model = build_model_A()
 
     # Train model
     history = model.fit(
