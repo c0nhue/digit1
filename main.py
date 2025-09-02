@@ -1,5 +1,5 @@
 import os
-from src.data_preprocessing import load_and_preprocess_data
+from src.data_preprocessing import load_data, preprocess_data_CNN
 from src.model import build_model
 from src.train import plot_training_history, plot_sample_predictions
 
@@ -7,7 +7,8 @@ def main():
     os.makedirs("outputs", exist_ok=True)
 
     # Load data
-    (X_train, y_train), (X_test, y_test) = load_and_preprocess_data()
+    (X_train, y_train),(X_val, y_val), (X_test, y_test) = load_data()
+    (X_train, y_train), (X_val, y_val), (X_test, y_test) = preprocess_data_CNN(X_train, y_train, X_val, y_val, X_test, y_test)
 
     # Build model
     model = build_model()
