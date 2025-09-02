@@ -33,3 +33,19 @@ def build_model_B(num_classes=10):
                   loss="categorical_crossentropy",
                   metrics=["accuracy"])
     return model_B
+
+
+def build_model_C(num_classes=10):
+    """Define simple model for MNIST classification"""
+    model_C = models.Sequential([
+        keras.Input(shape=(28,28,1)),
+        layers.Dense(128, activation="relu"),
+        layers.Dense(64, activation="relu"),
+        layers.Dense(32, activation="relu"),
+        layers.Dense(num_classes, activation="softmax")
+    ])
+
+    model_C.compile(optimizer="adam",
+                    loss="categorical_crossentropy",
+                    metrics=["accuracy"])
+    return model_C
